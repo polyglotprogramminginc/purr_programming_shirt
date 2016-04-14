@@ -10,7 +10,13 @@
     tools:context="com.purrprogramming.purrprogrammingshirt.MainActivityFragment"
     tools:showIn="@layout/activity_main">
 
-    <Button
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+    <!--Button
         android:id="@+id/initialize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,5 +46,5 @@
         android:id="@+id/purrProgramming"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Set Purr Programming" />
+        android:text="Set Purr Programming" /-->
 </LinearLayout>

@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.Toast
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
     val SERVICE_NOTIFICATION = "com.polyglotprogramminginc.purrprogramming.SERVICE_NOTIFICATION"
     lateinit private var menu: Menu
 
@@ -18,48 +16,6 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-        val initialize = findViewById(R.id.initialize) as Button
-        initialize.setOnClickListener {
-            val i: Intent = Intent(SERVICE_NOTIFICATION)
-            i.putExtra("command", "initialize")
-            sendBroadcast(i)
-        }
-
-        val southAfrica = findViewById(R.id.south_africa) as Button
-        southAfrica.setOnClickListener {
-            val i: Intent = Intent(SERVICE_NOTIFICATION)
-            i.putExtra("command", "south_africa")
-            sendBroadcast(i)
-        }
-
-        val ruby = findViewById(R.id.ruby) as Button
-        ruby.setOnClickListener {
-            val i: Intent = Intent(SERVICE_NOTIFICATION)
-            i.putExtra("command", "ruby")
-            sendBroadcast(i)
-        }
-
-        val eyes = findViewById(R.id.eyes) as Button
-        eyes.setOnClickListener {
-            val i: Intent = Intent(SERVICE_NOTIFICATION)
-            i.putExtra("command", "eyes")
-            sendBroadcast(i)
-        }
-
-        val purr = findViewById(R.id.purrProgramming) as Button
-        purr.setOnClickListener {
-            val i: Intent = Intent(SERVICE_NOTIFICATION)
-            i.putExtra("command", "purr")
-            sendBroadcast(i)
-        }
-
-        val swirls = findViewById(R.id.flashSwirls) as Button
-        swirls.setOnClickListener {
-            val i: Intent = Intent(SERVICE_NOTIFICATION)
-            i.putExtra("command", "flashSwirls")
-            sendBroadcast(i)
-        }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -76,10 +32,19 @@ class MainActivity : AppCompatActivity(){
 
         //noinspection SimplifiableIfStatement
         when (item.itemId) {
-            R.id.action_settings -> {
-                Toast.makeText(applicationContext, "settings", Toast.LENGTH_SHORT).show()
+            R.id.action_initialize -> {
                 val i: Intent = Intent(SERVICE_NOTIFICATION)
-                i.putExtra("command", "list")
+                i.putExtra("command", "initialize")
+                sendBroadcast(i)
+            }
+            R.id.action_eyes -> {
+                val i: Intent = Intent(SERVICE_NOTIFICATION)
+                i.putExtra("command", "eyes")
+                sendBroadcast(i)
+            }
+            R.id.action_swirls -> {
+                val i: Intent = Intent(SERVICE_NOTIFICATION)
+                i.putExtra("command", "flashSwirls")
                 sendBroadcast(i)
             }
         }
